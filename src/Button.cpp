@@ -1,4 +1,11 @@
+//=============================================================================
+//File Name: Button.cpp
+//Description: Holds definitions for Button class
+//Author: Tyler Veness
+//=============================================================================
+
 #include "GUI/Button.h"
+#include "Colors.h"
 
 HANDLE Button::hOut = GetStdHandle( STD_OUTPUT_HANDLE );
 
@@ -19,17 +26,17 @@ void Button::redraw( short x , short y ) {
 
 	ReadConsoleOutput( hOut , buffer , { static_cast<short>(text.length() + front.length() + back.length()) , 1 } , { 0 , 0 } , &restoreRegion );
 
-	color( hOut , B_GRAY );
+	SetConsoleTextAttribute( hOut , B_GRAY );
 	SetConsoleCursorPosition( hOut , { x , y } );
 	std::cout << front;
 	if ( !useable )
-		color( hOut , F_WHITE | B_GRAY );
+		SetConsoleTextAttribute( hOut , F_WHITE | B_GRAY );
 	std::cout << text;
-	color( hOut , B_GRAY );
+	SetConsoleTextAttribute( hOut , B_GRAY );
 	std::cout << back;
 	visible = true;
 
-	color( hOut , F_BRIGHT_WHITE );
+	SetConsoleTextAttribute( hOut , F_BRIGHT_WHITE );
 }
 
 bool Button::isHovered() {

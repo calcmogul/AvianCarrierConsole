@@ -1,9 +1,8 @@
-/*====================
- * Description: The GUI window component.
- * Author: Harrison M.
- * Edit Date: Jan 4, 2012
- * Version: 
- ====================*/
+//=============================================================================
+//File Name: Window.h
+//Description: Holds declarations for Window class
+//Author: Tyler Veness
+//=============================================================================
 
 #ifndef acguiwindow
 #define acguiwindow

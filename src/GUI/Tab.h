@@ -2,8 +2,6 @@
 //File Name: Tab.h
 //Description: Holds declarations for Tab class
 //Author: Tyler Veness
-//Last Modified: 1/16/2012
-//Version: 1.0
 //=============================================================================
 
 #ifndef TAB_H_
@@ -13,8 +11,7 @@
 #include <string>
 #include <vector>
 
-#include <ConsoleControl.h>
-#include <Colors.h>
+#include "ConsoleControl.h"
 
 #include "Settings.h"
 #include "Base.h"
@@ -33,11 +30,7 @@ private:
 
 	static short tabPos;
 
-	Tab( std::string fileName ) {
-		title = fileName;
-		tabWidth = title.length() + 5; // length of title + 2 on each side for spacing and tab edge = (4) + 1 for red X
-		tabStart = TAB_START_X;
-	}
+	Tab( std::string fileName );
 
 	static void drawTabBase();
 	void drawTab();

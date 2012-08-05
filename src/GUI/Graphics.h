@@ -1,9 +1,8 @@
-/*====================
- * Description: The GUI graphics component
- * Author: Harrison M.
- * Edit Date: Jan 4, 2012
- * Version: 
- ====================*/
+//=============================================================================
+//File Name: Graphics.h
+//Description: Draws ASCII graphics in the console window
+//Author: Tyler Veness
+//=============================================================================
 
 #ifndef GUI_GRAPHICS_H_
 #define GUI_GRAPHICS_H_

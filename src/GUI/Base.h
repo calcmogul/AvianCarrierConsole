@@ -1,19 +1,16 @@
-/*====================
- * Description: Header file that links all of the GUI components.
- * Author: Harrison M.
- * Edit Date: Jan 4, 2012
- * Version: 1.2
- ====================*/
+//=============================================================================
+//File Name: Base.h
+//Description: Contains utility functions
+//Author: Tyler Veness
+//=============================================================================
 
 #ifndef GUI_BASE_H_
 #define GUI_BASE_H_
 
-#include <windows.h>
 #include <iostream>
 #include <string>
 
-#include <ConsoleControl.h>
-#include <Colors.h>
+#include "ConsoleControl.h"
 
 extern COORD mousePos;
 extern INPUT_RECORD records[];

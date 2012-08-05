@@ -1,3 +1,9 @@
+//=============================================================================
+//File Name: Base.cpp
+//Description: Holds utility functions
+//Author: Tyler Veness
+//=============================================================================
+
 #include "GUI/Base.h"
 
 COORD mousePos;

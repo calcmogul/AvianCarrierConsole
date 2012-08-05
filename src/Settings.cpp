@@ -2,8 +2,6 @@
 //File Name: Settings.cpp
 //Description: Holds settings for UI component positions
 //Author: Tyler Veness
-//Last Modified: 1/16/2012
-//Version: 1.0
 //=============================================================================
 
 short TAB_START_X = 10;
