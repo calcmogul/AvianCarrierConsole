@@ -54,9 +54,6 @@ int main() {
 	GetCurrentDirectoryA( sizeof(currentDirectory) , currentDirectory );
 	SetCurrentDirectoryA( strcat( currentDirectory , "\\Resource" ) );
 
-	//sf::Console debug( 80 , 25 , "Debug Output" , "lucon.ttf" );
-	//sf::Event event;
-
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
 	GetConsoleScreenBufferInfo( hOut , &csbi );
 
@@ -115,13 +112,6 @@ int main() {
 	Tab::draw();
 
 	do {
-		/*while ( debug.IsOpened() ) {
-			while ( debug.GetEvent( event ) ) {
-				if ( event.Type == sf::Event::Closed )
-					debug.Close();
-			}
-		}*/
-
 		ReadConsoleInput( hIn , records , 1 , &eventsRead );
 
 		if ( records[0].EventType == MOUSE_EVENT ) {
@@ -306,7 +296,6 @@ int main() {
 				}
 
 				else if ( keyPressed( VK_DOWN ) || keyPressed( VK_UP ) ) {
-					//gotoxy( hOut , 0 , 20 );std::cout << "went up or down";Sleep(1000); //TEST
 					Tab::current->file.cursorPos.Y = Tab::current->file.cursorPos.Y + keyPressed( VK_DOWN ) - keyPressed( VK_UP );
 					Tab::current->file.cursorPos.Y = Tab::current->file.cursorPos.Y - ( static_cast<unsigned int>(Tab::current->file.cursorPos.Y) >=Tab::current->file.input.size() ) + ( Tab::current->file.cursorPos.Y < 0 );
 
