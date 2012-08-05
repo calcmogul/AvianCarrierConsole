@@ -5,7 +5,6 @@
 //=============================================================================
 
 //TODO: IMPORTANT Fix right arrow key not moving to next line down occasionally
-//TODO: IMPORTANT Closing most tabs causes crash (bad destructor call?)
 
 //TODO: Fix Ctrl + A flag
 //TODO: Hotkey for "Pull" ; Ctrl + P
