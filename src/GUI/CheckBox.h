@@ -2,13 +2,13 @@
 //File Name: CheckBox.h
 //Description: Holds declarations for CheckBox class
 //Author: Tyler Veness
-//Last Modified: 1/24/2012
-//Version: 1.0
 //=============================================================================
 
 #ifndef CHECKBOX_H_
 #define CHECKBOX_H_
 
+#define _WIN32_WINNT 0x0501
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
 class CheckBox {

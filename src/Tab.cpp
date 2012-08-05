@@ -2,11 +2,10 @@
 //File Name: Tab.cpp
 //Description: Holds definitions for Tab class
 //Author: Tyler Veness
-//Last Modified: 1/16/2012
-//Version: 1.0
 //=============================================================================
 
 #include "GUI/Tab.h"
+#include "Colors.h"
 
 HANDLE Tab::hOut = GetStdHandle( STD_OUTPUT_HANDLE );
 CONSOLE_SCREEN_BUFFER_INFO Tab::csbi;
@@ -15,6 +14,13 @@ std::vector<Tab*> Tab::tabsOpen;
 Tab* Tab::current = NULL;
 
 short Tab::tabPos;
+
+Tab::Tab( std::string fileName ) {
+	title = fileName;
+	tabWidth = title.length() + 5; // length of title + 2 on each side for spacing and tab edge = (4) + 1 for red X
+	tabStart = TAB_START_X;
+	exitPos = 0;
+}
 
 Tab::~Tab() {
 	std::vector<Tab*>::iterator index;
@@ -46,14 +52,14 @@ void Tab::saveLocal() {
 
 		dialogWin.name = "Success:";
 
-		color( hOut , F_BRIGHT_WHITE | B_BLUE );
+		SetConsoleTextAttribute( hOut , F_BRIGHT_WHITE | B_BLUE );
 		dialogWin.redraw();
 		dialogWin.print( "\"" + file.name + "\"" + " saved" , 0 );
 	}
 	else {
 		dialogWin.name = "Sorry:";
 
-		color( hOut , F_BRIGHT_WHITE | B_RED );
+		SetConsoleTextAttribute( hOut , F_BRIGHT_WHITE | B_RED );
 		dialogWin.redraw();
 		dialogWin.print( "Could not open \"" + file.name + "\"" , 0 );
 	}
@@ -61,7 +67,7 @@ void Tab::saveLocal() {
 	Sleep( 1000 );
 	dialogWin.erase();
 
-	color( hOut , B_BRIGHT_WHITE );
+	SetConsoleTextAttribute( hOut , B_BRIGHT_WHITE );
 }
 
 void Tab::callSave( Tab*& current ) {
@@ -94,7 +100,7 @@ void Tab::drawTab() {
 	tabStart = tabPos;
 	exitPos = tabPos + title.length() + 3;
 
-	color( hOut , F_GRAY );
+	SetConsoleTextAttribute( hOut , F_GRAY );
 
 	gotoxy( hOut , tabPos , tabBaseY );
 	std::cout << static_cast<char>(202); // _|_
@@ -122,20 +128,20 @@ void Tab::drawTab() {
 	gotoxy( hOut , tabPos + 1 , tabBaseY - 1 );
 
 	if ( current == this ) //else normal color
-		color( hOut , B_WHITE );
+		SetConsoleTextAttribute( hOut , B_WHITE );
 	else
-		color( hOut , F_WHITE );
+		SetConsoleTextAttribute( hOut , F_WHITE );
 
 	std::cout << " " << title << " ";
 
 	if ( current == this )
-		color( hOut , F_LIGHT_RED | B_WHITE );
+		SetConsoleTextAttribute( hOut , F_LIGHT_RED | B_WHITE );
 	else
-		color( hOut , F_LIGHT_RED );
+		SetConsoleTextAttribute( hOut , F_LIGHT_RED );
 
 	std::cout << "x";
 
-	color( hOut , F_WHITE );
+	SetConsoleTextAttribute( hOut , F_WHITE );
 
 	tabPos += tabWidth + 1;
 }

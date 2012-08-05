@@ -1,3 +1,9 @@
+//=============================================================================
+//File Name: Graphics.cpp
+//Description: Draws ASCII graphics in the console window
+//Author: Tyler Veness
+//=============================================================================
+
 #include "GUI/Graphics.h"
 
 HANDLE Graphics::hOut = GetStdHandle( STD_OUTPUT_HANDLE );

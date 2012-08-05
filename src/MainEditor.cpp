@@ -2,10 +2,7 @@
 //File Name: MainEditor.cpp
 //Description: Handles main editor and window
 //Author: Tyler Veness
-//Last Modified: 1/16/2012
-//Version: 1.0
 //=============================================================================
-//TODO: GUI_MESSAGE class needed?
 
 //TODO: IMPORTANT Fix right arrow key not moving to next line down occasionally
 //TODO: IMPORTANT Closing most tabs causes crash (bad destructor call?)
@@ -21,12 +18,9 @@
 //TODO: Make auto-tabbing work correctly when brackets are erased
 
 #include <iostream>
-#include <cstring>
 
-#include <ConsoleControl.h>
-#include <Colors.h>
-#include <SFML/Network.hpp>
-
+#include "ConsoleControl.h"
+#include "Colors.h"
 #include "File.h"
 #include "GUI/Tab.h"
 #include "GUI/Base.h"
@@ -70,7 +64,7 @@ int main() {
 	maximizeBuffer( hOut );
 
 	SetConsoleTitle( "Avian Carrier - Spartatroniks Software Team" );
-	color( hOut , F_BRIGHT_WHITE );
+	SetConsoleTextAttribute( hOut , F_BRIGHT_WHITE );
 
 	SetConsoleCtrlHandler( NULL , TRUE ); //stops Ctrl + C from closing program
 

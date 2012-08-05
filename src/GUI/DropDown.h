@@ -2,8 +2,6 @@
 //File Name: DropDown.h
 //Description: Holds declarations of DropDown GUI class
 //Author: Tyler Veness
-//Last Modified: 1/4/2012
-//Version: 1.0
 //=============================================================================
 
 #ifndef GUI_DROPDOWN_H_

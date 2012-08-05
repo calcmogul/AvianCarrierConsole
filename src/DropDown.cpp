@@ -2,13 +2,12 @@
 //File Name: DropDown.cpp
 //Description: Holds definitions of DropDown GUI class
 //Author: Tyler Veness
-//Last Modified: 1/4/2012
-//Version: 1.0
 //=============================================================================
 
 #include "GUI/Base.h"
 #include "GUI/DropDown.h"
 #include "GUI/Button.h"
+#include "Colors.h"
 
 HANDLE DropDown::hOut = GetStdHandle( STD_OUTPUT_HANDLE );
 HANDLE DropDown::hIn = GetStdHandle( STD_INPUT_HANDLE );
@@ -93,7 +92,7 @@ void DropDown::draw() { //menu is out, so draw options and let user choose
 		menu[index]->redraw(position.X , position.Y + index);
 
 	/* === Merge Top Button with Rest of DropDown Menu === */
-	color( hOut , B_GRAY );
+	SetConsoleTextAttribute( hOut , B_GRAY );
 	gotoxy( hOut , position.X , position.Y + 1 );
 	std::cout << static_cast<char>(204); // ||=
 	gotoxy( hOut , position.X + menu[0]->text.length() + menu[0]->back.length() , position.Y + 1 );

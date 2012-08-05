@@ -2,8 +2,6 @@
 //File Name: File.h
 //Description: Holds declarations for File class
 //Author: Tyler Veness
-//Last Modified: 1/16/2012
-//Version: 1.0
 //=============================================================================
 
 #ifndef FILE_H_
@@ -15,10 +13,9 @@
 #include <vector>
 #include <windows.h>
 
-#include <ConsoleControl.h>
-#include <Colors.h>
 #include <SFML/Network.hpp>
 
+#include "ConsoleControl.h"
 #include "GUI/Settings.h"
 #include "GUI/Window.h"
 

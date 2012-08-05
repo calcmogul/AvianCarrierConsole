@@ -1,3 +1,9 @@
+//=============================================================================
+//File Name: Toolbar.cpp
+//Description: Holds definitions for Toolbar class
+//Author: Tyler Veness
+//=============================================================================
+
 #include "GUI/Toolbar.h"
 
 CONSOLE_SCREEN_BUFFER_INFO Toolbar::csbi;

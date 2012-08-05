@@ -1,3 +1,9 @@
+//=============================================================================
+//File Name: Window.cpp
+//Description: Holds definitions for Window class
+//Author: Tyler Veness
+//=============================================================================
+
 #include "GUI/Window.h"
 
 HANDLE Window::hOut = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -17,6 +23,8 @@ Window::Window( int xPos , int yPos , std::string title , int xlength , int ylen
 	for ( short row = 0 ; row < height ; row++ ) {
 		buffer.push_back( static_cast<CHAR_INFO*>( calloc( width , sizeof(CHAR_INFO) ) ) );
 	}
+
+	visible = false;
 }
 
 Window::~Window() {

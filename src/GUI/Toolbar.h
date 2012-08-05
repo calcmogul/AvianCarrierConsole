@@ -1,9 +1,8 @@
-/*====================
- * Description: The GUI Toolbar component.
- * Author: Harrison M.
- * Edit Date: Jan 4, 2012
- * Version: 1
- ====================*/
+//=============================================================================
+//File Name: Toolbar.h
+//Description: Holds declarations for Toolbar class
+//Author: Tyler Veness
+//=============================================================================
 
 #ifndef GUI_TOOLBAR_H_
 #define GUI_TOOLBAR_H_

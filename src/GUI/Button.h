@@ -1,9 +1,8 @@
-/*====================
- * Description: The GUI Button Component.
- * Author: Harrison M.
- * Edit Date: Jan 4, 2012
- * Version: 1.3
- ====================*/
+//=============================================================================
+//File Name: Button.h
+//Description: Holds declarations for Button class
+//Author: Tyler Veness
+//=============================================================================
 
 #ifndef GUI_BUTTON_H_
 #define GUI_BUTTON_H_

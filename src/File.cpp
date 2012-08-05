@@ -2,11 +2,10 @@
 //File Name: File.cpp
 //Description: Holds definitions for File class
 //Author: Tyler Veness
-//Last Modified: 1/16/2012
-//Version: 1.0
 //=============================================================================
 
 #include "File.h"
+#include "Colors.h"
 
 HANDLE File::hOut = GetStdHandle( STD_OUTPUT_HANDLE );
 CONSOLE_SCREEN_BUFFER_INFO File::csbi;
@@ -78,7 +77,7 @@ sf::Packet& operator>>( sf::Packet& fileTransport , File& receiveMe ) {
 
 void File::clrLine( short cursorRow ) {
 	GetConsoleScreenBufferInfo( hOut , &csbi );
-	color( hOut , B_BRIGHT_WHITE );
+	SetConsoleTextAttribute( hOut , B_BRIGHT_WHITE );
 
 	gotoxy( hOut , PAGE_START_X , EDITOR_START_Y + cursorRow );
 	for ( long long collumn = PAGE_START_X ; collumn < csbi.dwSize.X - PAGE_START_X ; collumn++ )
@@ -87,7 +86,7 @@ void File::clrLine( short cursorRow ) {
 
 void File::clrEditor() {
 	GetConsoleScreenBufferInfo( hOut , &csbi );
-	color( hOut , B_BRIGHT_WHITE );
+	SetConsoleTextAttribute( hOut , B_BRIGHT_WHITE );
 
 	for ( long long row = PAGE_START_Y ; row < csbi.dwSize.Y ; row++ ) {
 		gotoxy( hOut , PAGE_START_X , row );
@@ -108,7 +107,7 @@ void File::addTabSpace( unsigned int tabNum ) {
 }
 
 void File::redraw( short drawRow ) {
-	color( hOut , B_BRIGHT_WHITE );
+	SetConsoleTextAttribute( hOut , B_BRIGHT_WHITE );
 	gotoxy( hOut , EDITOR_START_X , static_cast<short>(EDITOR_START_Y + drawRow) );
 	std::cout << input.at(drawRow);
 
