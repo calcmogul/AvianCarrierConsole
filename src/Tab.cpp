@@ -166,19 +166,13 @@ void Tab::checkAllXClicked() {
 			}
 
 			delete tabsOpen.at(index);
-			tabsOpen.erase( tabsOpen.begin() + index );
 			redrawTabs = true;
 		}
 	}
 
-	if ( redrawTabs ) {
+	if ( redrawTabs )
 		draw();
-		std::cout << "redraw worked";
-		Sleep( 2000 );
-	}
-	if ( currentChanged ) {
+
+	if ( currentChanged )
 		current->file.redrawAll();
-		std::cout << "redraw worked";
-		Sleep( 2000 );
-	}
 }
